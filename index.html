@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modern Upload Card</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+
+    <body>
+        <header>
+
+            <nav class="navbar">
+                <div class="nav-container">
+                    <a class="nav-logo">Blank😍Pdf</a>
+                    <ul class="nav-menu">
+                        <li><a href="http://localhost:3000/home" class="nav-link">Home</a></li>
+                        <li><a href="http://localhost:3000/about" class="nav-link">About</a></li>
+                        <li><a href="http://localhost:3000/contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-toggle" id="nav-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="pdfCard-title">
+            <h2>Your Favroute Pdf Merger App</h2>
+        </div>
+
+        <div class="card-Container">
+            <div class="upload-card">
+                <div class="upload-header">
+                    <h1>Upload Your PDFs</h1>
+                    <p>Drag and drop or click to select your files</p>
+                </div>
+
+                <!-- Form to upload multiple PDF files -->
+                <form action="/merge" method="POST" enctype="multipart/form-data" id="upload-form" class="upload-form">
+                    <div class="file-drop-area">
+                        <input type="file" id="pdf-files" name="pdfs" accept=".pdf" multiple class="file-input">
+                        <label for="pdf-files" class="file-label">
+                            <span class="upload-icon">📂</span>
+                            <span class="upload-text">Drop files here or click to upload</span>
+                        </label>
+                    </div>
+
+                    <div class="file-list" id="file-list">
+                        <!-- Selected files will be displayed here -->
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" value="merge" class="upload-btn">Upload</button>
+                        <button type="button" class="cancel-btn" onclick="resetForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+
+            function resetForm () {
+                document.getElementById('upload-form').reset();
+                document.getElementById('file-list').innerHTML = '';
+            }
+
+            document.getElementById('pdf-files').addEventListener('change', function (event) {
+                const fileList = document.getElementById('file-list');
+                fileList.innerHTML = ''; // Clear previous file list
+
+                for (const file of event.target.files) {
+                    const listItem = document.createElement('div');
+                    listItem.textContent = file.name;
+                    fileList.appendChild(listItem);
+                }
+            });
+
+            document.getElementById('nav-toggle').addEventListener('click', function () {
+                document.querySelector('.nav-menu').classList.toggle('active');
+            });
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/static/pdfs.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a class="nav-logo">Blank😍Pdf</a>
+                <ul class="nav-menu">
+                    <li><a href="http://localhost:3000/home" class="nav-link">Home</a></li>
+                    <li><a href="http://localhost:3000/about" class="nav-link">About</a></li>
+                    <li><a href="http://localhost:3000/contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="about">
+            <h1>About Us</h1>
+            <p>Welcome to Blank😍Pdf, your go-to tool for merging PDF documents effortlessly. Our mission is to provide a simple, efficient, and user-friendly platform to handle all your PDF merging needs.</p>
+            <p>At Blank😍Pdf, we understand the importance of document management, and we are committed to delivering a seamless experience. Whether you are a professional handling multiple reports or a student merging research papers, our tool is designed to make your life easier.</p>
+            <p>Our team is dedicated to continuous improvement and innovation, ensuring that we meet the ever-evolving needs of our users. If you have any feedback or suggestions, please do not hesitate to <a href="/contact" class="nav-link">contact us</a>.</p>
+            <p>Thank you for choosing Blank😍Pdf!</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Blank😍Pdf. All rights reserved.</p>
+    </footer>
+    <script>
+         document.getElementById('nav-toggle').addEventListener('click', function () {
+                document.querySelector('.nav-menu').classList.toggle('active');
+            });
+    </script>
+</body>
+</html>
